@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-
+export DOCKER_CLI_EXPERIMENTAL=enabled
 function main() {
   echo "" # see https://github.com/actions/toolkit/issues/168
 
