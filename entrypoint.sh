@@ -33,6 +33,7 @@ function main() {
 #) >> ~/.docker/config.json  
   echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
   cat ~/.docker/config.json
+  docker info
   BUILDPARAMS=""
 
   if uses "${INPUT_DOCKERFILE}"; then
