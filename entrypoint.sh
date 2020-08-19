@@ -1,14 +1,6 @@
 #!/bin/sh
 set -e
 
-#Enabled experimental features
-mkdir ~/.docker/
-cat <<EOT>> ~/.docker/config.json
-{
-"experimental": "enabled"
-}
-EOT
-#
 function main() {
   echo "" # see https://github.com/actions/toolkit/issues/168
 
@@ -31,7 +23,14 @@ function main() {
     echo "hello world"
     changeWorkingDirectory
   fi
-
+mkdir ~/.docker/
+#
+cat << EOF
+{
+"experimental": "enabled"
+}
+EOF
+) >> ~/.docker/config.json  
   echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
   cat ~/.docker/config.json
   BUILDPARAMS=""
