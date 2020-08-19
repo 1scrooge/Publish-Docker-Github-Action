@@ -33,7 +33,7 @@ function main() {
   fi
 
   echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
-  ls
+  find / -name config.json
   BUILDPARAMS=""
 
   if uses "${INPUT_DOCKERFILE}"; then
