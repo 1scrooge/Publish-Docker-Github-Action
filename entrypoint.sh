@@ -1,6 +1,13 @@
 #!/bin/sh
 set -e
-export DOCKER_CLI_EXPERIMENTAL=enabled
+
+#Enabled experimental features
+cat <<EOT>> ~/.docker/config.json
+{
+"experimental": "enabled"
+}
+EOT
+#
 function main() {
   echo "" # see https://github.com/actions/toolkit/issues/168
 
