@@ -2,6 +2,7 @@
 set -e
 
 #Enabled experimental features
+mkdir ~/.docker/
 cat <<EOT>> ~/.docker/config.json
 {
 "experimental": "enabled"
