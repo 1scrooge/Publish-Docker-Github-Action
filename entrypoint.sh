@@ -23,14 +23,14 @@ function main() {
     echo "hello world"
     changeWorkingDirectory
   fi
-mkdir ~/.docker/
-#
-cat << EOF
-{
-"experimental": "enabled"
-}
-EOF
-) >> ~/.docker/config.json  
+#mkdir ~/.docker/
+##
+#cat << EOF
+#{
+#"experimental": "enabled"
+#}
+#EOF
+#) >> ~/.docker/config.json  
   echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
   cat ~/.docker/config.json
   BUILDPARAMS=""
