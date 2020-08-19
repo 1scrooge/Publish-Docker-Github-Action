@@ -119,7 +119,7 @@ function useBuildCache() {
   fi
 }
 
-function usePlatform() {
+function addPlatform() {
     BUILDPARAMS="$BUILDPARAMS --platform ${INPUT_PLATFORM}"
 }
 
