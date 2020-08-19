@@ -5,13 +5,8 @@ LABEL "maintainer"="OpenChainCorp"
 RUN apk update \
   && apk upgrade \
   && apk add --no-cache git
-RUN mkdir -p /github/home/.docker/ && \
-    cat > /github/home/.docker/config.json < EOF
-    {
-    "experimental": "enabled"
-    }
-    EOF
-RUN find / -name config.json
+RUN mkdir -p /github/home/.docker/
+ADD ./config.json /github/home/.docker/config.json
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
