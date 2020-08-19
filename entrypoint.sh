@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
+
 export DOCKER_CLI_EXPERIMENTAL=enabled
+
 function main() {
   echo "" # see https://github.com/actions/toolkit/issues/168
 
@@ -31,7 +33,9 @@ function main() {
 #}
 #EOF
 #) >> ~/.docker/config.json  
+  mkdir -p /github/home/.docker/ && echo '{"experimental": true}' > /github/home/.docker/config.json
   echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
+  echo ###
   cat ~/.docker/config.json
   docker info
   BUILDPARAMS=""
