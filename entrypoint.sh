@@ -26,7 +26,6 @@ function main() {
     changeWorkingDirectory
   fi
 #  mkdir -p /github/home/.docker/ && echo '{"experimental": true}' > /github/home/.docker/config.json
-  cat /github/home/.docker/config.json
   echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
   echo ###
   cat ~/.docker/config.json
