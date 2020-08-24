@@ -1,4 +1,4 @@
-FROM docker:19.03.2 as runtime
+FROM scrooge/docker:latest
 LABEL "repository"="https://github.com/SC-Poc/Publish-Docker-Github-Action"
 LABEL "maintainer"="OpenChainCorp"
 
@@ -17,4 +17,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 #ADD mock.sh /usr/bin/date
 #RUN /test.bats
 
-FROM runtime
+#FROM runtime
