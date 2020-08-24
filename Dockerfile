@@ -1,4 +1,5 @@
-FROM scrooge/docker:latest
+#FROM scrooge/docker:latest
+FROM docker:19.03.2 as runtime
 LABEL "repository"="https://github.com/SC-Poc/Publish-Docker-Github-Action"
 LABEL "maintainer"="OpenChainCorp"
 
@@ -7,7 +8,7 @@ RUN apk update \
   && apk add --no-cache git
 #RUN mkdir -p /github/home/.docker/
 #ADD ./config.json /github/home/.docker/config.json
-RUN cat /github/home/.docker/config.json
+#RUN cat /github/home/.docker/config.json
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 

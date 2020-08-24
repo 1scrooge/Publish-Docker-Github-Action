@@ -28,8 +28,8 @@ function main() {
 #  mkdir -p /github/home/.docker/ && echo $'{\n    "experimental": true\n}' | tee /github/home/.docker/config.json
   echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
   echo ###
-  cat ~/.docker/config.json
-  docker info
+#  cat ~/.docker/config.json
+#  docker info
   BUILDPARAMS=""
 
   if uses "${INPUT_DOCKERFILE}"; then
