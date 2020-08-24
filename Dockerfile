@@ -7,6 +7,7 @@ RUN apk update \
   && apk add --no-cache git
 #RUN mkdir -p /github/home/.docker/
 #ADD ./config.json /github/home/.docker/config.json
+RUN cat /github/home/.docker/config.json
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
