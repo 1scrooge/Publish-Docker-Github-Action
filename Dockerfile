@@ -1,5 +1,5 @@
-#FROM scrooge/docker:latest
-FROM docker:19.03.2 as runtime
+FROM scrooge/docker:latest
+#FROM docker:19.03.2 as runtime
 LABEL "repository"="https://github.com/SC-Poc/Publish-Docker-Github-Action"
 LABEL "maintainer"="OpenChainCorp"
 
